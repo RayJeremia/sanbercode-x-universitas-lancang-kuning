@@ -1,0 +1,32 @@
+Soal No 1
+CREATE DATABASE myshop;
+
+Soal No 2
+A. Table USERS
+CREATE TABLE USERS ( ID int AUTO_INCREMENT PRIMARY KEY, Name varchar(255), email varchar(255), Password varchar(255) );
+
+B. Table Categories
+CREATE TABLE Categories ( id int AUTO_INCREMENT PRIMARY KEY, name varchar(255) );
+
+C. Table Items
+CREATE TABLE items ( id int AUTO_INCREMENT PRIMARY KEY, name varchar(255), description varchar(255), price integer, stock integer, category_id integer, FOREIGN KEY (category_id) REFERENCES categories(id) );
+
+Soal No 3
+A. Table USERS
+INSERT INTO users ( Name,email,Password) VALUES ("Ray jeremia", "Ray@gmail.com", "Ray123"), ("Febriando", "febrian@gmail.com", "Akun123");
+
+B. Table Items
+INSERT INTO items ( Name,description,price,stock,category_id) VALUES ("Samsung a50", "Hape keren dari merek samsung", "5000000",150,1),("ROG PHONE 6", "Dijamin nyaman main Game nya", "15000000",250,2),("Sennheiser HD 280 Pro", "Bas nya bikin nyaman di telinga"," 150000",100,1);
+
+Soal No 4
+A. Mengambil data users
+SELECT ID,Name,email,Password FROM `users`;
+
+B. Mengambil data items
+SELECT * FROM `items` WHERE price > 1000000;
+SELECT * FROM `items` WHERE nama LIKE 'Sum%';
+SELECT items.*,categories.name AS'kategori' FROM items INNER JOIN categories ON items.categories_id= categoies.id;
+
+Soal  No 5
+UPDATE items set price=2500000 WHERE id = 1;
+
